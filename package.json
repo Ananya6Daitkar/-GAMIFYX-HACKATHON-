@@ -1,0 +1,16 @@
+{
+  "name": "gamifyx-platform",
+  "version": "1.0.0",
+  "description": "AI-Powered Gamified Learning Platform",
+  "private": true,
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspaces",
+    "build": "npm run build --workspaces",
+    "test": "npm run test --workspaces",
+    "test:run": "npm run test:run --workspaces"
+  }
+}

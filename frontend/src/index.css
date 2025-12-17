@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Dark mode (default) */
+:root {
+  color-scheme: dark;
+}
+
+html.dark {
+  color-scheme: dark;
+}
+
+html.light {
+  color-scheme: light;
+}
+
+/* Dark mode styles */
+body {
+  background: linear-gradient(135deg, #0a0e27 0%, #1a1a3e 100%);
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+html.light body {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  color: #0f172a;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+}
+
+code, pre {
+  font-family: 'Space Mono', monospace;
+}
+
+/* Glass morphism component */
+@layer components {
+  .glass {
+    @apply bg-white/10 backdrop-blur-[10px] border border-white/20;
+  }
+
+  .glass-dark {
+    @apply bg-slate-900/40 backdrop-blur-[10px] border border-slate-700/50;
+  }
+
+  html.light .glass-dark {
+    @apply bg-white/80 backdrop-blur-[10px] border border-gray-200/50;
+  }
+
+  /* Neon glow effects */
+  .glow-cyan {
+    @apply shadow-glow-cyan hover:shadow-glow-cyan-lg transition-shadow duration-300;
+  }
+
+  .glow-magenta {
+    @apply shadow-glow-pink hover:shadow-glow-pink-lg transition-shadow duration-300;
+  }
+
+  .glow-blue {
+    @apply shadow-glow-blue hover:shadow-glow-blue-lg transition-shadow duration-300;
+  }
+
+  /* Gradient backgrounds */
+  .gradient-dark {
+    @apply bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900;
+  }
+
+  .gradient-dark-blue {
+    @apply bg-gradient-to-br from-slate-900 to-blue-900;
+  }
+
+  .gradient-neon {
+    @apply bg-gradient-to-r from-cyan-500/20 to-pink-500/20;
+  }
+
+  html.light .gradient-dark {
+    @apply bg-gradient-to-br from-blue-50 via-purple-50 to-blue-50;
+  }
+
+  html.light .gradient-dark-blue {
+    @apply bg-gradient-to-br from-blue-50 to-indigo-50;
+  }
+
+  /* Smooth transitions */
+  .transition-fast {
+    @apply transition-all duration-150;
+  }
+
+  .transition-normal {
+    @apply transition-all duration-300;
+  }
+
+  .transition-slow {
+    @apply transition-all duration-500;
+  }
+
+  /* Typography utilities */
+  .heading-xl {
+    @apply text-4xl font-bold font-orbitron;
+  }
+
+  .heading-lg {
+    @apply text-3xl font-bold font-orbitron;
+  }
+
+  .heading-md {
+    @apply text-2xl font-bold font-orbitron;
+  }
+
+  .heading-sm {
+    @apply text-xl font-bold font-orbitron;
+  }
+
+  .body-lg {
+    @apply text-lg font-inter;
+  }
+
+  .body-md {
+    @apply text-base font-inter;
+  }
+
+  .body-sm {
+    @apply text-sm font-inter;
+  }
+
+  .code-text {
+    @apply font-mono text-sm;
+  }
+
+  /* Button utilities */
+  .btn-base {
+    @apply px-4 py-2 rounded-lg font-medium transition-all duration-300 cursor-pointer;
+  }
+
+  .btn-primary {
+    @apply btn-base bg-cyan-500 hover:bg-cyan-600 text-black font-bold;
+  }
+
+  .btn-secondary {
+    @apply btn-base bg-pink-500 hover:bg-pink-600 text-white font-bold;
+  }
+
+  .btn-ghost {
+    @apply btn-base bg-transparent border border-cyan-500 text-cyan-400 hover:bg-cyan-500/10;
+  }
+
+  html.light .btn-primary {
+    @apply bg-blue-500 hover:bg-blue-600 text-white;
+  }
+
+  html.light .btn-secondary {
+    @apply bg-pink-500 hover:bg-pink-600 text-white;
+  }
+
+  html.light .btn-ghost {
+    @apply border-blue-500 text-blue-600 hover:bg-blue-500/10;
+  }
+
+  /* Card utilities */
+  .card {
+    @apply rounded-lg border backdrop-blur-md transition-all duration-300;
+  }
+
+  .card-dark {
+    @apply bg-slate-800/80 border-cyan-500/30 hover:border-cyan-500/60;
+  }
+
+  html.light .card-dark {
+    @apply bg-white/90 border-gray-200/50 hover:border-gray-300/75;
+  }
+
+  /* Focus states */
+  .focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-2 focus:ring-offset-slate-900;
+  }
+
+  html.light .focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-white;
+  }
+
+  /* Staggered animation helper */
+  .stagger-item {
+    @apply transition-all duration-300;
+  }
+}
+
+/* Screen reader only content */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.focus\:not-sr-only:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  padding: inherit;
+  margin: inherit;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar for dark mode */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 255, 255, 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 255, 255, 0.5);
+}
+
+html.light ::-webkit-scrollbar-track {
+  background: rgba(248, 250, 252, 0.5);
+}
+
+html.light ::-webkit-scrollbar-thumb {
+  background: rgba(0, 153, 255, 0.3);
+}
+
+html.light ::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 153, 255, 0.5);
+}
