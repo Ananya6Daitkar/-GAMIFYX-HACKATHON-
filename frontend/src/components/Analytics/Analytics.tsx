@@ -69,20 +69,7 @@ export const Analytics: React.FC = () => {
   }
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      {/* Page Title */}
-      <motion.div
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        className="mb-12"
-      >
-        <h1 className="text-4xl font-bold text-white font-orbitron mb-2">
-          Analytics Dashboard
-        </h1>
-        <p className="text-gray-400">Track your learning progress and skill development</p>
-      </motion.div>
-
+    <div className="w-full">
       {/* Charts Grid */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         {/* Activity Chart */}
