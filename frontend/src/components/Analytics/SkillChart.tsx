@@ -40,7 +40,7 @@ export const SkillChart: React.FC<SkillChartProps> = ({ data }) => {
       initial={{ opacity: 0, scale: 0.95 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.6 }}
-      className="bg-gradient-to-br from-slate-800 to-slate-900 border border-magenta-500/20 rounded-lg p-6 backdrop-blur-md"
+      className="bg-gradient-to-br from-slate-800 to-slate-900 border border-magenta-500/20 rounded-lg p-6 backdrop-blur-md w-full"
     >
       <div className="mb-6">
         <h2 className="text-xl font-bold text-white font-orbitron mb-2">
@@ -49,14 +49,15 @@ export const SkillChart: React.FC<SkillChartProps> = ({ data }) => {
         <p className="text-gray-400 text-sm">Proficiency by programming language</p>
       </div>
 
-      {data.length > 0 ? (
+      {data && data.length > 0 ? (
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           onAnimationComplete={() => setIsAnimating(false)}
+          style={{ width: '100%', height: '320px' }}
         >
-          <ResponsiveContainer width="100%" height={300}>
+          <ResponsiveContainer width="100%" height="100%">
             <BarChart data={data} margin={{ top: 5, right: 30, left: 0, bottom: 5 }}>
               <defs>
                 <linearGradient id="colorProficiency" x1="0" y1="0" x2="0" y2="1">

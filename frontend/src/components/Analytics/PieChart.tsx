@@ -60,7 +60,7 @@ export const AnalyticsPieChart: React.FC<AnalyticsPieChartProps> = ({
       initial={{ opacity: 0, scale: 0.95 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.6 }}
-      className="bg-gradient-to-br from-slate-800 to-slate-900 border border-magenta-500/20 rounded-lg p-6 backdrop-blur-md"
+      className="bg-gradient-to-br from-slate-800 to-slate-900 border border-magenta-500/20 rounded-lg p-6 backdrop-blur-md w-full"
     >
       <div className="mb-6">
         <h2 className="text-xl font-bold text-white font-orbitron mb-2">
@@ -69,13 +69,14 @@ export const AnalyticsPieChart: React.FC<AnalyticsPieChartProps> = ({
         {description && <p className="text-gray-400 text-sm">{description}</p>}
       </div>
 
-      {data.length > 0 ? (
+      {data && data.length > 0 ? (
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
+          style={{ width: '100%', height: '320px' }}
         >
-          <ResponsiveContainer width="100%" height={300}>
+          <ResponsiveContainer width="100%" height="100%">
             <PieChart>
               <Pie
                 data={data}

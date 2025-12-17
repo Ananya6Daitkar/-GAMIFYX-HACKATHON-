@@ -172,13 +172,13 @@ export const mockAIFeedback: AIFeedback = {
 
 export const mockAnalyticsData = {
   activityChart: [
-    { date: 'Mon', submissions: 2 },
-    { date: 'Tue', submissions: 3 },
-    { date: 'Wed', submissions: 1 },
-    { date: 'Thu', submissions: 4 },
-    { date: 'Fri', submissions: 3 },
-    { date: 'Sat', submissions: 2 },
-    { date: 'Sun', submissions: 1 },
+    { date: 'Mon', submissionCount: 2, xpEarned: 50 },
+    { date: 'Tue', submissionCount: 3, xpEarned: 75 },
+    { date: 'Wed', submissionCount: 1, xpEarned: 25 },
+    { date: 'Thu', submissionCount: 4, xpEarned: 100 },
+    { date: 'Fri', submissionCount: 3, xpEarned: 75 },
+    { date: 'Sat', submissionCount: 2, xpEarned: 50 },
+    { date: 'Sun', submissionCount: 1, xpEarned: 25 },
   ],
   skillChart: [
     { language: 'JavaScript', proficiency: 85 },
@@ -188,9 +188,9 @@ export const mockAnalyticsData = {
     { language: 'Docker', proficiency: 58 },
   ],
   progressChart: [
-    { week: 'Week 1', xp: 100 },
-    { week: 'Week 2', xp: 250 },
-    { week: 'Week 3', xp: 380 },
-    { week: 'Week 4', xp: 450 },
+    { date: 'Week 1', totalXP: 100, level: 1 },
+    { date: 'Week 2', totalXP: 250, level: 2 },
+    { date: 'Week 3', totalXP: 380, level: 3 },
+    { date: 'Week 4', totalXP: 450, level: 5 },
   ],
 }

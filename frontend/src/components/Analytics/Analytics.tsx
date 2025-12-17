@@ -26,11 +26,20 @@ export interface ProgressData {
 }
 
 export const Analytics: React.FC = () => {
-  const [activityData] = useState<any[]>(mockAnalyticsData.activityChart)
-  const [skillData] = useState<any[]>(mockAnalyticsData.skillChart)
-  const [progressData] = useState<any[]>(mockAnalyticsData.progressChart)
+  const [activityData] = useState<any[]>(mockAnalyticsData.activityChart || [])
+  const [skillData] = useState<any[]>(mockAnalyticsData.skillChart || [])
+  const [progressData] = useState<any[]>(mockAnalyticsData.progressChart || [])
   const [loading] = useState(false)
   const [error] = useState<string | null>(null)
+
+  // Debug: Log data to verify it's loading
+  React.useEffect(() => {
+    console.log('Analytics data loaded:', {
+      activityData: activityData.length,
+      skillData: skillData.length,
+      progressData: progressData.length,
+    })
+  }, [])
 
   // Bar chart data - Assignment completion by difficulty
   const assignmentCompletionData = [
