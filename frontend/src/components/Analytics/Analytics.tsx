@@ -69,7 +69,18 @@ export const Analytics: React.FC = () => {
   }
 
   return (
-    <div className="w-full">
+    <div className="w-full space-y-8">
+      {/* Section Title */}
+      <motion.div
+        initial={{ opacity: 0, y: -10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="mb-6"
+      >
+        <h2 className="text-2xl font-bold text-white font-orbitron mb-2">Detailed Analytics</h2>
+        <p className="text-gray-400 text-sm">Comprehensive breakdown of your learning metrics</p>
+      </motion.div>
+
       {/* Charts Grid */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         {/* Activity Chart */}
