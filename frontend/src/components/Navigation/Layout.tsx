@@ -29,6 +29,8 @@ const NAV_LINKS: NavLink[] = [
   { label: 'Focus Lock', href: '/focus', icon: '🎯' },
   { label: 'Teacher Dashboard', href: '/teacher', icon: '👨‍🏫' },
   { label: 'Feedback', href: '/feedback', icon: '💬' },
+  { label: 'DevOps', href: '/devops', icon: '🚀' },
+  { label: 'AIOps', href: '/aiops', icon: '🤖' },
   { label: 'Notifications', href: '/notifications', icon: '🔔' },
   { label: 'Profile', href: '/profile', icon: '👤' },
 ]

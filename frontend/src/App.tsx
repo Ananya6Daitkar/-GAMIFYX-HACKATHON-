@@ -21,6 +21,9 @@ const FeedbackPage = lazy(() => import('./pages/FeedbackPage').then(m => ({ defa
 const ProfilePage = lazy(() => import('./pages/ProfilePage').then(m => ({ default: m.ProfilePage })))
 const AssignmentsPage = lazy(() => import('./pages/AssignmentsPage').then(m => ({ default: m.AssignmentsPage })))
 const NotificationsPage = lazy(() => import('./pages/NotificationsPage').then(m => ({ default: m.NotificationsPage })))
+const DemoPage = lazy(() => import('./pages/DemoPage').then(m => ({ default: m.DemoPage })))
+const AIOpsPage = lazy(() => import('./pages/AIOpsPage').then(m => ({ default: m.AIOpsPage })))
+const DevOpsPage = lazy(() => import('./pages/DevOpsPage').then(m => ({ default: m.DevOpsPage })))
 
 // Loading fallback component
 const LoadingFallback = () => (
@@ -143,6 +146,9 @@ function App() {
                   <Route path="/feedback" element={<FeedbackPage />} />
                   <Route path="/profile" element={<ProfilePage />} />
                   <Route path="/notifications" element={<NotificationsPage />} />
+                  <Route path="/demo" element={<DemoPage />} />
+                  <Route path="/aiops" element={<AIOpsPage />} />
+                  <Route path="/devops" element={<DevOpsPage />} />
                   <Route path="*" element={<Navigate to="/" replace />} />
                 </Routes>
               </Suspense>

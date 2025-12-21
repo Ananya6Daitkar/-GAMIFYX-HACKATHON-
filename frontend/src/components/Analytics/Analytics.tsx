@@ -91,12 +91,13 @@ export const Analytics: React.FC = () => {
       </motion.div>
 
       {/* Charts Grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 w-full">
         {/* Activity Chart */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: ANIMATION_DELAYS.staggerCard * 0 }}
+          className="w-full min-w-0"
         >
           <ActivityChart data={activityData} />
         </motion.div>
@@ -106,6 +107,7 @@ export const Analytics: React.FC = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: ANIMATION_DELAYS.staggerCard * 1 }}
+          className="w-full min-w-0"
         >
           <SkillChart data={skillData} />
         </motion.div>
@@ -115,7 +117,7 @@ export const Analytics: React.FC = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: ANIMATION_DELAYS.staggerCard * 2 }}
-          className="lg:col-span-2"
+          className="lg:col-span-2 w-full min-w-0"
         >
           <ProgressChart data={progressData} />
         </motion.div>
@@ -125,6 +127,7 @@ export const Analytics: React.FC = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: ANIMATION_DELAYS.staggerCard * 3 }}
+          className="w-full min-w-0"
         >
           <AnalyticsBarChart
             data={assignmentCompletionData}
@@ -138,6 +141,7 @@ export const Analytics: React.FC = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: ANIMATION_DELAYS.staggerCard * 4 }}
+          className="w-full min-w-0"
         >
           <AnalyticsPieChart
             data={xpDistributionData}
